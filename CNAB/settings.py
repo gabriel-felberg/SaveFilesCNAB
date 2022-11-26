@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
     "contas",
 ]
 
@@ -56,7 +57,7 @@ ROOT_URLCONF = "CNAB.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ['templates/contas'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -118,6 +119,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+
+STATIC_ROOT = "static"
+
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 
 MIDIA_ROOT = os.path.join(BASE_DIR, "uploads")

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 
 <html>
@@ -7,12 +9,13 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href={% static 'style/style.css' %} />
   </head>
   <body>
     <form action="{% url 'processando_form'%}" method="POST" enctype="multipart/form-data">{% csrf_token %}
-      <input name="nome" type="file">
+      <input name="nome" type="file" >
       <button type="submit">Enviar</button>
     </form>
+    
   </body>
 </html>
