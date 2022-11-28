@@ -4,7 +4,7 @@ A aplicação Dragon File tem como finalidade a conversão do arquivo CNAB para 
 
 ## Linguagem Principal
 
-1.Python
+Python
 
 ## Principais bibliotecas
 
@@ -16,53 +16,53 @@ A aplicação Dragon File tem como finalidade a conversão do arquivo CNAB para 
 
 ## Framework
 
-1.Django
+Django
 
 ## Devemos ter o seguinte programa intalado
 
-```json
-1.Python
+```text
+Python
 ```
 
 ## Para iniciar o projeto rode o comando
 
-```json
+```text
 python -m venv venv
 ```
 
 ## Ative o ambiente virtual no powershell
 
-```json
+```text
 .\venv\Scripts\activate
 ```
 
 ## Instale as bibliotecas
 
-```json
+```text
 pip install djangorestframework
 ```
 
-```json
+```text
 pip install django
 ```
 
-```json
+```text
 pip install -r requirements.txt
 ```
 
-## Agora vamos gerar e aplicar as migracoes
+## Agora vamos gerar e aplicar as migrations
 
-```json
+```text
 python manage.py makemigrations
 ```
 
-```json
+```text
 python manage.py migrate
 ```
 
 ## vamos iniciar o projeto
 
-```json
+```text
 python manage.py runserver
 ```
 
