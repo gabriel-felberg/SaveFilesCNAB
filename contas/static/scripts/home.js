@@ -1,6 +1,7 @@
 const inputFile = document.querySelector("#arquivo");
-const paragraph = document.querySelector("#paragrapho");
+const paragraph = document.querySelector("#paragrafo");
 paragraph.innerText = "";
+
 inputFile.addEventListener("change", function (e) {
   const inputTarget = e.target;
   const file = inputTarget.files[0];

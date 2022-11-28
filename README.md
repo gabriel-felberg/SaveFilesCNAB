@@ -41,7 +41,7 @@ python -m venv venv
 ```json
 pip install djangorestframework
 ```
-pi
+
 ```json
 pip install django
 ```
