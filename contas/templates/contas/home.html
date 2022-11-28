@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Dragon File</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href={% static 'style/reset.css' %} />
+    <link rel="stylesheet" href={% static 'style/home.css' %} /> 
+  </head>
+  <body>
+    <header>
+      <h1>Bem vindo a DragonFile o melhor site de uploads</h1>
+      <h3>Fassa seu upload logo abaixo</h3>
+    </header>
+    <main>
+      <form
+        action="{% url 'processando_form'%}"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %}
+        <section>
+          <label type="submit" for="arquivo" id="label">
+            <h2>Selecionar Arquivo</h2>
+          </label>
+          <p id="paragrafo"></p>
+        </section>
+        <input name="arquivo" type="file" id="arquivo" />
+        <button type="submit">Enviar</button>
+      </form>
+    </main>
+    <script src={% static 'scripts/home.js' %}></script>
+  </body>
+</html>
