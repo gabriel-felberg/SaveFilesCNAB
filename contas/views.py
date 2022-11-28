@@ -18,7 +18,7 @@ class GetDataViews(generics.ListAPIView):
     queryset = Conta.objects.all()
 
 
-def inicio(request):
+def start(request):
     form = contaSerializer()
     return render(request, "contas/home.html", {"form": form})
 
