@@ -1,0 +1,50 @@
+h3{
+    color: #ffffff;
+}
+h2{
+    font-size: xx-large;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    background-color: #faab00;
+}
+td, table{
+    border: 2px solid #f96a00;
+    border-collapse: collapse;
+    padding: .3rem .3rem;
+}
+th{
+    background: rgb(255, 0, 0);
+    color: #ffffff;
+    padding: .5rem .5rem;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0px 30px 0px;
+}
+
+
+button{
+    width: 90px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color:  #f96a00;
+    color: white;
+    cursor: pointer;
+    font-size: medium;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+button:hover{
+    background-color: #daf204;
+    color: black;
+    transition: 5;
+}

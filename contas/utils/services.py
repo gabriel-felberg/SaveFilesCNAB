@@ -5,7 +5,7 @@ from ..serializer import contaSerializer
 
 def handle_uploaded_file(request):
     with open("file.txt", "wb+") as destination:
-        for chunk in request["nome"].chunks():
+        for chunk in request["arquivo"].chunks():
             destination.write(chunk)
 
     with open("file.txt", encoding="utf-8") as destination:
@@ -17,7 +17,7 @@ def handle_uploaded_file(request):
             obj = {
                 "Tipo": line[0],
                 "Data": f"{line[1:5]}-{line[6:7]}-{line[8]}",
-                "Valor": int(int(line[10:20])/100),
+                "Valor": int(int(line[10:20]) / 100),
                 "CPF": f"{line[20:23]}.{line[23:26]}.{line[26:29]}-{line[29:31]}",
                 "Cartão": f"{line[31:43]}",
                 "Hora": time_zone_correct(

@@ -8,14 +8,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href={% static '' %} />
+        <link rel="stylesheet" href={% static 'style/reset.css' %} />
+        <link rel="stylesheet" href={% static 'style/result.css' %} /> 
     </head>
     <body>
+      <header> 
         <h2>Banco de Dados</h2>
-
-          <button id="btn">API</button>
-
-        <table id="table" border=1>
+        <button id="btn">API</button>
+      </header>
+      <main>
+        <table id="table" border=5>
           <thead>
             <th>Tipo</th>
             <th>Data</th>
@@ -23,12 +25,12 @@
             <th>Cartão</th>
             <th>Hora</th>
             <th>Valor</th>
-            <th>Nome da Loja</th>
+            <th> da Loja</th>
             <th>Dono</th>
           </thead>
           <tbody id="tbody"/>
         </table>
-        <script src={% static 'scripts/script.js' %}></script>
+      </main>
+      <script src={% static 'scripts/script.js' %}></script>
     </body>
-    
 </html>
