@@ -1,9 +1,9 @@
 from datetime import datetime, timedelta
 from django.shortcuts import redirect
-from ..serializer import contaSerializer
+from ..serializer import ContaSerializer
 
 
-def handle_uploaded_file(request):
+def Handle_uploaded_file(request):
     with open("file.txt", "wb+") as destination:
         for chunk in request["arquivo"].chunks():
             destination.write(chunk)
@@ -18,7 +18,7 @@ def handle_uploaded_file(request):
                 "Valor": int(int(line[10:20]) / 100),
                 "CPF": f"{line[20:23]}.{line[23:26]}.{line[26:29]}-{line[29:31]}",
                 "Cartão": f"{line[31:43]}",
-                "Hora": time_zone_correct(
+                "Hora": Time_zone_correct(
                     int(line[1:5]),
                     int(line[6:7]),
                     int(line[8]),
@@ -30,20 +30,20 @@ def handle_uploaded_file(request):
                 "NomeLoja": f"{line[62:-1]}",
             }
             json.append(obj)
-            serializer = contaSerializer(data=obj)
+            serializer = ContaSerializer(data=obj)
             serializer.is_valid(raise_exception=True)
             serializer.save()
         return redirect("/api/ShowData/")
 
 
-def time_zone_correct(ano, mes, dia, hora, minuto, segundo):
+def Time_zone_correct(ano, mes, dia, hora, minuto, segundo):
     data_atual = datetime(
         year=ano, month=mes, day=dia, hour=hora, minute=minuto, second=segundo
     ) - timedelta(hours=3)
     return data_atual.strftime("%H:%M:%S")
 
 
-def test_handle_uploaded_file():
+def test_Handle_uploaded_file():
     with open("file.txt", encoding="utf-8") as destination:
         file = destination.readlines()
         json = []
@@ -54,7 +54,7 @@ def test_handle_uploaded_file():
                 "Valor": int(int(line[10:20]) / 100),
                 "CPF": f"{line[20:23]}.{line[23:26]}.{line[26:29]}-{line[29:31]}",
                 "Cartão": f"{line[31:43]}",
-                "Hora": time_zone_correct(
+                "Hora": Time_zone_correct(
                     int(line[1:5]),
                     int(line[6:7]),
                     int(line[8]),

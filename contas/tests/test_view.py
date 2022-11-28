@@ -1,12 +1,12 @@
 from rest_framework.test import APITestCase
-from ..utils.services import test_handle_uploaded_file
+from ..utils.services import test_Handle_uploaded_file
 from ..models import Conta
 
 
 class test_view_contas(APITestCase):
     @classmethod
     def setUpTestData(cls):
-        cls.file_upload = test_handle_uploaded_file()
+        cls.file_upload = test_Handle_uploaded_file()
         cls.file_data = {
             "Tipo": 3,
             "Data": "2019-03-01",
@@ -20,7 +20,7 @@ class test_view_contas(APITestCase):
         cls.file = Conta.objects.create(**cls.file_data)
 
     def test_keys_of_CNAB(self):
-        '''Tem como função verificar todas as chaves já escritas'''
+        """Tem como função verificar todas as chaves já escritas"""
         expeted = [
             "Tipo",
             "Data",
@@ -39,6 +39,6 @@ class test_view_contas(APITestCase):
         self.assertEqual(result, expeted, f"Era esperado as chaves: {expeted}")
 
     def test_get_conta(self):
-        '''Deve pegar todas as contas criadas'''
+        """Deve pegar todas as contas criadas"""
         conta_response = self.client.get("/api/dados/")
         self.assertEqual(len(conta_response.data), 1, "Deve conter apenas 1 de tamanho")

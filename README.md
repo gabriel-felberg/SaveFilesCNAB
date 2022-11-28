@@ -60,8 +60,6 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-### Não se esquesa de configurar as variáveis de ambiente de acordo com o arquivo ".env.example" e coloqueas em um arquivo chamado ".env"
-
 ## vamos iniciar o projeto
 
 ```json
